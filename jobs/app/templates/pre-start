@@ -1,0 +1,4 @@
+#!/bin/bash
+
+date >> /tmp/start.txt
+echo "pre-start" >> /tmp/start.txt

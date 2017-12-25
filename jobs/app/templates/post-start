@@ -1,0 +1,3 @@
+#!/bin/bash
+date >> /tmp/start.txt
+echo "post-start" >> /tmp/start.txt
