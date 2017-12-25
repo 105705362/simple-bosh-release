@@ -1,0 +1,19 @@
+Bosh commands
+bosh ssh -e vbox -d learn-bosh
+
+http://www.bosh.io/docs/jobs.html
+
+cd repo/pcf/tutorial/simple-bosh-release
+bosh -e vbox create-release --force
+bosh -e vbox upload-release
+bosh -e vbox -d learn-bosh deploy ./manifest.yml --recreate --skip-drain
+
+#execute errand
+bosh -e vbox run-errand -d learn-bosh app
+
+bosh
+
+
+bosh -e vbox errands -d learn-bosh
+cd /var/vcap/jobs/
+ls /tmp
