@@ -23,3 +23,4 @@ properties:
   example_service_network_az_multi_select: {}
   example_disk_type_dropdown: {}
   example_vm_type_dropdown: {}
+  contents: "default contents"

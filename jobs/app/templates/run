@@ -13,6 +13,6 @@ export GEM_HOME=/var/vcap/packages/simple_server/gem_home/ruby/2.1.0
 function pid_exists() {
   ps -p $1 &> /dev/null
 }
-cat "helloworld" >> /tmp/newfile.txt
+cat <%= p("contents") %> >> /tmp/newfile.txt
 esac
 exit 0
