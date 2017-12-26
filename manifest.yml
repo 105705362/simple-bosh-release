@@ -30,22 +30,26 @@ instance_groups:
   jobs:
   - name: app
     port: 18080
-#- name: router_job
-#  azs:
-#  - z1
-#  instances: 1
-#  vm_type: small
-#  stemcell: default
-#  update:
-#    max_in_flight: 1
-#    serial: true
-#  networks:
-#  - name: default
-#    static_ips:
-#    - 10.244.0.23
 
-#  jobs:
-#  - name: router
+- name: router_job
+  azs:
+  - z1
+  instances: 1
+  vm_type: small
+  stemcell: default
+  update:
+    max_in_flight: 1
+    serial: true
+  networks:
+  - name: default
+    static_ips:
+    - 10.244.0.23
+  jobs:
+  - name: router
+    properties:
+      port: 8080
+      servers: ["http://10.224.0.20:18080","http://10.224.0.21:18080","http://10.224.0.22:18080"]
+
 stemcells:
 - alias: default
   os: ubuntu-trusty
